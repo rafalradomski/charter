@@ -1,10 +1,16 @@
 import PropTypes from 'prop-types';
-import { dollar } from '../../../../utils/formatters';
+import { dollar, niceDate } from '../../../../utils/formatters';
+import { calcPointsPerPurchase } from '../../../../utils/calcPoints';
 
 const generateTransactionsList = (transactions) => {
   return transactions.map((transaction) => {
-    const { id, totalAmount } = transaction;
-    return <li key={`transaction-${id}`}>{dollar(totalAmount)}</li>;
+    const { id, totalAmount, date } = transaction;
+    const points = calcPointsPerPurchase(totalAmount);
+    return (
+      <li key={`transaction-${id}`}>
+        {dollar(totalAmount)} - <strong>{points} points</strong> - <small>{niceDate(date)}</small>
+      </li>
+    );
   });
 };
 
