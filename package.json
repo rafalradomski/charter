@@ -51,5 +51,10 @@
     "hooks": {
       "pre-commit": "format"
     }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint"
+    ]
   }
 }
