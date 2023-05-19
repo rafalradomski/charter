@@ -1,5 +1,9 @@
 # Charter assignment
 
+The task was to calculate customers points based on their transactions from last few months.
+
+![alt text](https://github.com/rafalradomski/charter/blob/main/example.png?raw=true)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
