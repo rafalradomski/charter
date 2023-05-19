@@ -3,9 +3,12 @@ import CustomerTransactions from './CustomerTransactions/CustomerTransactions';
 import { calcTotalPoints } from '../../../utils/calcPoints';
 import { customersDetailsStyles } from './CustomersDetails.styles';
 
+export const extractTransactions = (transactions) =>
+  transactions.map((transaction) => transaction.totalAmount);
+
 const CustomersDetails = ({ data }) => {
   const { name, transactions } = data;
-  const userTransactions = transactions.map((transaction) => transaction.totalAmount);
+  const userTransactions = extractTransactions(transactions);
   const totalPoints = calcTotalPoints(userTransactions);
   return (
     <div style={customersDetailsStyles}>

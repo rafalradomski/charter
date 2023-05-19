@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { customers } from '../data/data';
+import { CUSTOMERS } from '../data/data';
 
-const getCustomers = async () => fetch('https://dummyjson.com/users').then(() => customers);
+const getCustomers = async () => fetch('https://dummyjson.com/users').then(() => CUSTOMERS);
 
 export const useGetCustomers = () => {
   const [loading, setLoading] = useState(true);
